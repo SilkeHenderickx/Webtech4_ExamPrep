@@ -5,7 +5,25 @@
 </head>
 <body>
   <h1>Let me blow your socks off with some number trivia!</h1>
-  Number: {{trivia_number}}<br /><br />
-  {{trivia_text}}
+  <table>
+    <tr>
+      <th>
+        Number
+      </th>
+      <th>
+        Trivia
+      </th>
+    </tr>
+    {% for t in trivia %}
+    <tr>
+      <td>
+        {{ t.number }}
+      </td>
+      <td>
+        {{ t.text }}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
 </body>
 </html>
