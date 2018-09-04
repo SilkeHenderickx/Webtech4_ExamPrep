@@ -5,4 +5,11 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    number = 42
+    text = '42 is the number of gallons that one barrel of petroleum holds.'
+
+    context = {
+    'trivia_number': number,
+    'trivia_text': text,
+    }
+    return render(request, 'index.html', context)
