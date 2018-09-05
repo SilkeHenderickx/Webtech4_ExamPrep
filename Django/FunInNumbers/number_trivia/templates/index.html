@@ -4,26 +4,18 @@
   <title>Number Trivia</title>
 </head>
 <body>
-  <h1>Let me blow your socks off with some number trivia!</h1>
-  <table>
-    <tr>
-      <th>
-        Number
-      </th>
-      <th>
-        Trivia
-      </th>
-    </tr>
-    {% for t in trivia %}
-    <tr>
-      <td>
-        {{ t.number }}
-      </td>
-      <td>
-        {{ t.text }}
-      </td>
-    </tr>
-    {% endfor %}
-  </table>
+  <h1>Let me blow your socks off with some number trivia!</h1><br />
+  <h2>Enter a whole number: </h2>
+
+  <form method="post" action="post_trivia/">
+    {% csrf_token %}
+  <input type="number" name="number">
+  <br>
+  <input type="submit" value="Submit">
+</form>
+{{trivia.number}}<br />
+{{trivia.text}}
+
+<h2 >To see all your number trivia click <a href="http://localhost:8000/all_trivia">here</a></h2>
 </body>
 </html>

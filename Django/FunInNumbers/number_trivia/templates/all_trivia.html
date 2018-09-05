@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Trivia</title>
+</head>
+<body>
+  <h1>Let me blow your socks off with some number trivia!</h1>
+  {% for n in numbers %}
+  <h2>{{n.number}}</h2>
+    {% for t in trivia %}
+      {% if t.number == n.number%}
+      {{t.text}}<br />
+      {{endif}}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</body>
+</html>
